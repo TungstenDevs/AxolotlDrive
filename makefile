@@ -20,13 +20,15 @@ endif
 # App
 # =========================
 
-.PHONY: run
-run:
-	go run cmd/main.go
-
 .PHONY: build
 build:
 	go build -o bin/axolotldrive cmd/main.go
+
+
+.PHONY: run
+run:
+	make build
+	./bin/axolotldrive
 
 .PHONY: test
 test:
