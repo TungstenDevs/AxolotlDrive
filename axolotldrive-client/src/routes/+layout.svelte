@@ -13,7 +13,7 @@
 <title>AxolotlDrive - Self Hosted File Sharing</title>
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<TooltipProvider delayduration={0}>
+<TooltipProvider delayDuration={0}>
   <SidebarProvider>
     <AppSidebar />
     <main class="w-full">

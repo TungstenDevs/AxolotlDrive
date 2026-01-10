@@ -6,4 +6,5 @@ export type FileAndFolder = {
     extension?: string; // only for files
     createdAt: Date;
     updatedAt: Date;
+    selected?: boolean;
 }

@@ -1,10 +1,9 @@
 <script lang="ts">
-  import AppFiledatatable from "$lib/components/app-filedatatable.svelte";
+  import AppFilelist from "$lib/components/app-filelist.svelte";
   import AppSearch from "$lib/components/app-search.svelte";
   import { Button } from "$lib/components/ui/button";
-  import { Checkbox } from "$lib/components/ui/checkbox";
   import AppTooltip from "$lib/components/utils/app-tooltip.svelte";
-  import { fileTableColumns, fileTableData } from "$lib/utils/filecollumn";
+  import { fileTableData } from "$lib/utils/filecollumn";
   import {
     FolderPlus,
     InfoIcon,
@@ -15,7 +14,6 @@
   import Grid_3x3 from "lucide-svelte/icons/grid-3x3";
 
   let layout: "grid" | "list" = $state("list");
-  let allSelected: boolean = $state(false);
 </script>
 
 <div class="w-full min-h-screen flex flex-col">
@@ -66,17 +64,5 @@
     </div>
   </div>
 
-  <!-- <div class="w-full p-3 flex items-center justify-between border-b">
-    <div class="flex gap-2 items-center">
-      <Checkbox
-        id="files"
-        checked={allSelected}
-        onchange={() => (allSelected = !allSelected)}
-      />
-      <label for="files" class="text-sm font-semibold cursor-pointer"
-        >Select All</label
-      >
-    </div>
-  </div> -->
-  <AppFiledatatable data={fileTableData} columns={fileTableColumns} />
+  <AppFilelist data={fileTableData} />
 </div>
